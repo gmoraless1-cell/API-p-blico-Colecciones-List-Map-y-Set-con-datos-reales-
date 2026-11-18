@@ -1,6 +1,7 @@
 package edu.umg.programacion2.clase03.ejercicios.busqueda;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import edu.umg.programacion2.clase03.modelo.Usuario;
 
@@ -26,7 +27,12 @@ import edu.umg.programacion2.clase03.modelo.Usuario;
 public class BuscadorPorNombre {
 
 	public List<Usuario> buscarPorNombreParcial(List<Usuario> usuarios, String texto) {
-		// TODO: reemplazar esta línea por la lógica descrita arriba.
-		throw new UnsupportedOperationException("TODO: completar buscarPorNombreParcial() en BuscadorPorNombre");
+		List<Usuario> resultado = new ArrayList<>();
+		for (Usuario usuario : usuarios) {
+			if (usuario.getNombreCompleto().toLowerCase().contains(texto.toLowerCase())) {
+				resultado.add(usuario);
+			}
+		}
+		return resultado;
 	}
 }
